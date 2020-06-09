@@ -9,9 +9,24 @@ namespace BalancedBracketsTests
         // TODO: Add tests to this file.
 
         [TestMethod]
-        public void EmptyTest()
+        public void OnlyBracketsReturnsTrue()
         {
-            Assert.AreEqual(true, true);
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[]"));
+        }
+        [TestMethod]
+        public void IfBracketsAreWrongChar()
+        {
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("{}"));
+        }
+        [TestMethod]
+        public void ThisIsTheSingletonTest()
+        {
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("["));
+        }
+        [TestMethod]
+        public void UnBalancedTest()
+        {
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("[]]"));
         }
     }
 }

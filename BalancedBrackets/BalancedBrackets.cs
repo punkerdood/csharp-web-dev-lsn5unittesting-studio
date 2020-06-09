@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace BalancedBracketsNS
 {
@@ -35,6 +36,19 @@ namespace BalancedBracketsNS
                 else if (ch == ']')
                 {
                     brackets--;
+                }
+                else
+                {
+                    if (str.ToCharArray().Length <= 1)
+                    {
+                        
+                        return false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You Didn't Use The Correct Bracket.");
+                        return false;
+                    }
                 }
             }
             return brackets == 0;
